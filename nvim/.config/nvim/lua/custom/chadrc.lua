@@ -1,11 +1,12 @@
+local nvimtreeConfs = require("custom.plugins.nvimtree")
 local M = {}
 
 M.options = {
-  relativenumber = true,
+  relativenumber = false,
 }
 
 M.ui = {
-  theme = "chadracula",
+  theme = "tokyodark",
   transparency = false,
 }
 
@@ -18,6 +19,13 @@ M.plugins = {
   default_plugin_config_replace = {
     nvim_cmp = "custom.plugins.cmp",
     telescope = "custom.plugins.telescope",
+    -- TODO: fix it
+    nvimtree = {
+      git = {
+        enabled = true,
+        ignore = true,
+      },
+    },
   },
   install = require("custom.plugins"),
 }
