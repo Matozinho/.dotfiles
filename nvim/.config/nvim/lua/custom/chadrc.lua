@@ -6,7 +6,7 @@ M.options = {
 }
 
 M.ui = {
-  theme = "chadracula",
+  theme = "tokyodark",
   transparency = false,
 }
 
