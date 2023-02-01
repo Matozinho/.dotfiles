@@ -1,33 +1,13 @@
 local nvimtreeConfs = require("custom.plugins.nvimtree")
 local M = {}
 
-M.options = {
-  relativenumber = false,
-}
-
 M.ui = {
-  theme = "tokyodark",
-  transparency = false,
+  theme = "gruvbox_darker",
+  theme_toggle = { "gruvbox_darker", "one_light" },
 }
 
-M.plugins = {
-  options = {
-    lspconfig = {
-      setup_lspconf = "custom.plugins.lspconfig",
-    },
-  },
-  default_plugin_config_replace = {
-    nvim_cmp = "custom.plugins.cmp",
-    telescope = "custom.plugins.telescope",
-    -- TODO: fix it
-    nvimtree = {
-      git = {
-        enabled = true,
-        ignore = true,
-      },
-    },
-  },
-  install = require("custom.plugins"),
-}
+M.plugins = require "custom.plugins"
+M.mappings = require "custom.mappings"
+
 
 return M

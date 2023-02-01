@@ -1,19 +1,25 @@
------------>>| VARIABLES |<<-----------
+vim.opt.relativenumber = true
+vim.opt.wrap = false
+vim.opt.scrolloff = 12
 
-require("custom.variables.core")
+vim.g.guifont = "Iosevka Nerd Font:h12"
+vim.o.guifont = "Iosevka Nerd Font"
+vim.g.neovide_refresh_rate = 140
 
------------>>| MAPPINGS |<<-----------
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
 
-require("custom.mappings.dap")
-require("custom.mappings.core")
-require("custom.mappings.rest")
-require("custom.mappings.fterm")
-require("custom.mappings.copilot")
-require("custom.mappings.nvimtree")
-require("custom.mappings.telescope")
+vim.g.luasnippets_path = "./snippets"
 
------------>>| COMMANDS |<<-----------
-require("custom.commands")
+local autocmd = vim.api.nvim_create_autocmd
 
------------>>| INIT |<<-----------
-require("custom.enable")
+autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.pile" },
+  callback = function()
+    vim.cmd [[
+      set filetype=pile
+    ]]
+  end,
+})
+
+vim.cmd [[imap <silent><script><expr> <C-j> copilot#Accept("\<C-k>")]]
