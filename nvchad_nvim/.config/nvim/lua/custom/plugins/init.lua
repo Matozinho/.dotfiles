@@ -16,6 +16,12 @@ return {
   },
 
   -- New plugins
+  ["williamboman/mason-lspconfig.nvim"] = {
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
+    end,
+  },
   ["windwp/nvim-ts-autotag"] = {
     ft = { "html", "javascriptreact" },
     after = "nvim-treesitter",
@@ -81,17 +87,6 @@ return {
       require("custom.plugins.align").setup()
     end,
   },
-  -- ["folke/noice.nvim"] = {
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("custom.plugins.noice").setup()
-  --   end,
-  --   requires = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  -- },
   ["pwntester/octo.nvim"] = {
     requires = {
       "nvim-lua/plenary.nvim",
@@ -126,7 +121,6 @@ return {
     end,
   },
   ["hrsh7th/cmp-emoji"] = {},
-  ["williamboman/mason-lspconfig.nvim"] = {},
   ["mizlan/iswap.nvim"] = {},
   ["iamcco/markdown-preview.nvim"] = {},
   ["tpope/vim-fugitive"] = {},

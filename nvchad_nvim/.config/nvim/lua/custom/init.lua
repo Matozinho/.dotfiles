@@ -1,4 +1,4 @@
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.wrap = false
 vim.opt.scrolloff = 12
 

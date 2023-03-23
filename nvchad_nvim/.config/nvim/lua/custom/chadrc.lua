@@ -2,7 +2,7 @@ local nvimtreeConfs = require("custom.plugins.nvimtree")
 local M = {}
 
 M.ui = {
-  theme = "gruvbox_darker",
+  theme = "tokyonight",
   theme_toggle = { "gruvbox_darker", "one_light" },
 }
 
